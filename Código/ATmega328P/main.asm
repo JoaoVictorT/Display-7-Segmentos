@@ -38,3 +38,15 @@ Dois:
    OUT  PORTB, MPC
    RCALL Delay 
    RJMP Tres
+
+Tres:
+   LDI MPC,  0x4F 
+   OUT  PORTB, MPC
+   RCALL Delay 
+   RJMP Quatro
+
+Quatro:
+   LDI MPC,  0x66 
+   OUT  PORTB, MPC
+   RCALL Delay
+   RJMP Cinco
