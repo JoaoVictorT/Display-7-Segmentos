@@ -62,3 +62,15 @@ Seis:
    OUT  PORTB, MPC
    RCALL Delay
    RJMP Sete
+   
+ Sete:
+   LDI MPC,  0x07 
+   OUT  PORTB, MPC
+   RCALL Delay
+   RJMP Oito
+
+Oito:
+   LDI MPC,  0x7F
+   OUT  PORTB, MPC
+   RCALL Delay
+   RJMP Nove
