@@ -1,24 +1,24 @@
 
 
-.DEF MP = R16  
-.DEF MPC = R17 
+.DEF MP = R16  ;Definiu MP como registrador 16
+.DEF MPC = R17 ;Definiu MP como registrador 17
 
 
-RJMP Start 
+RJMP Start ;Salta para o Start
 
 Start:
 
-   LDI MP, 0xFF 
-   OUT DDRB, MP 
-    LDI  r18, 11 
+   LDI MP, 0xFF ; Carregou 0b11111111 no R16
+   OUT DDRB, MP ; Todas as portas B como saída
+    LDI  r18, 11 ;Cálculo do delay
     LDI  r19, 99 
-	RJMP Programa 
+    RJMP Programa ;Salta para o Programa 
 	
 
 
 Programa:
-	RCALL Zero 
-	RJMP Programa 
+	RCALL Zero ;Chama a função Zero
+	RJMP Programa ;Salta para o Programa
 	
 Zero:
    RCALL Delay 
@@ -52,13 +52,13 @@ Quatro:
    RJMP Cinco
    
 Cinco:
-   LDI MPC,  0x6D 
+   LDI MPC,  0x6D ;acende os leds necessarios para dar 5
    OUT  PORTB, MPC
    RCALL Delay
    RJMP Seis
 
 Seis:
-   LDI MPC,  0x7D 
+   LDI MPC,  0x7D ;acende os leds necessarios para dar 6
    OUT  PORTB, MPC
    RCALL Delay
    RJMP Sete
