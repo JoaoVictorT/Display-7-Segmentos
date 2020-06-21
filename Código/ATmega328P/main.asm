@@ -40,13 +40,13 @@ Dois:
    RJMP Tres
 
 Tres:
-   LDI MPC,  0x4F 
+   LDI MPC,  0x4F  ;acende os leds necessarios para dar 3
    OUT  PORTB, MPC
    RCALL Delay 
    RJMP Quatro
 
 Quatro:
-   LDI MPC,  0x66 
+   LDI MPC,  0x66 ;acende os leds necessarios para dar 4
    OUT  PORTB, MPC
    RCALL Delay
    RJMP Cinco
@@ -76,16 +76,16 @@ Oito:
    RJMP Nove
    
 Nove:
-   LDI MPC,  0x6F 
+   LDI MPC,  0x6F ;acende os leds necessarios para dar 9
    OUT  PORTB, MPC
    RCALL Delay
    RJMP Zero
   
-RET 
+RET ; Retorna para Call Zero
 
-Delay: dec  r19 
-    brne Delay 
-    dec  r18 
+Delay: dec  r19 ; Delay 1ms
+    brne Delay  ; começa em 0 e soma mais 1
+    dec  r18  ; decrementa um no registro
     brne Delay 
  
  RET
