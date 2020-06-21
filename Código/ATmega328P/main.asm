@@ -74,3 +74,18 @@ Oito:
    OUT  PORTB, MPC
    RCALL Delay
    RJMP Nove
+   
+Nove:
+   LDI MPC,  0x6F 
+   OUT  PORTB, MPC
+   RCALL Delay
+   RJMP Zero
+  
+RET 
+
+Delay: dec  r19 
+    brne Delay 
+    dec  r18 
+    brne Delay 
+ 
+ RET
