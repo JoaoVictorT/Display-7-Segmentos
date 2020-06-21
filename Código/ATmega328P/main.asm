@@ -21,20 +21,20 @@ Programa:
 	RJMP Programa ;Salta para o Programa
 	
 Zero:
-   RCALL Delay 
-   LDI MPC, 0x3F 
-   OUT  PORTB, MPC 
-   RCALL Delay 
+   RCALL Delay ; Delay para contar o 0
+   LDI MPC, 0x3F ; acende os leds necessarios para dar 0
+   OUT  PORTB, MPC  ; Colocando as devidas portas B em High e low
+   RCALL Delay ; chamando o Delay
    RJMP Um
 
 Um: 
-   LDI MPC,  0x06 
+   LDI MPC,  0x06 ; acende os leds necessarios para dar 1
    OUT  PORTB, MPC
    RCALL Delay 
    RJMP Dois
 
 Dois:
-   LDI MPC,  0x5B 
+   LDI MPC,  0x5B ; acende os leds necessarios para dar 2
    OUT  PORTB, MPC
    RCALL Delay 
    RJMP Tres
@@ -64,13 +64,13 @@ Seis:
    RJMP Sete
    
 Sete:
-   LDI MPC,  0x07 
+   LDI MPC,  0x07 ; acende os leds necessarios para dar 7
    OUT  PORTB, MPC
    RCALL Delay
    RJMP Oito
 
 Oito:
-   LDI MPC,  0x7F
+   LDI MPC,  0x7F ; acende os leds necessarios para dar 8
    OUT  PORTB, MPC
    RCALL Delay
    RJMP Nove
