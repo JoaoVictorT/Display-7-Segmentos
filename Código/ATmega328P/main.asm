@@ -50,3 +50,15 @@ Quatro:
    OUT  PORTB, MPC
    RCALL Delay
    RJMP Cinco
+   
+Cinco:
+   LDI MPC,  0x6D 
+   OUT  PORTB, MPC
+   RCALL Delay
+   RJMP Seis
+
+Seis:
+   LDI MPC,  0x7D 
+   OUT  PORTB, MPC
+   RCALL Delay
+   RJMP Sete
