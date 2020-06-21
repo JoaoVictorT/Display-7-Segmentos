@@ -63,7 +63,7 @@ Seis:
    RCALL Delay
    RJMP Sete
    
- Sete:
+Sete:
    LDI MPC,  0x07 
    OUT  PORTB, MPC
    RCALL Delay
