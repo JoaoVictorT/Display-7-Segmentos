@@ -1,7 +1,7 @@
 
 
 .DEF MP = R16  ;Definiu MP como registrador 16
-.DEF MPC = R17 ;Definiu MP como registrador 17
+.DEF MPC = R17 ;Definiu MPC como registrador 17
 
 
 RJMP Start ;Salta para o Start
